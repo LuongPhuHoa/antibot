@@ -1,0 +1,8 @@
+### BEGIN FILE ###
+
+# UGPROXY.COM robots.txt file 
+
+User-agent: *
+Disallow: /r/*
+
+#Sitemap: https://ugproxy.com/sitemap.xml

@@ -11,7 +11,7 @@ session_start();
 require_once('lib/antibot.php');
 $Antibot = new Antibot; 
 
-if(file_exists("htaccess.txt") && !file_exists(".htaccess")){
+if(file_exists("htaccess.txt") && !file_exists("api/api.key")){
 	file_put_contents(".htaccess", file_get_contents("htaccess.txt"));
 }
 ?>

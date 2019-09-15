@@ -1,0 +1,17 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME}.php -f
+	RewriteRule (.*) $1.php [L]
+	RewriteRule ^r/(.*)$ ./redirect.php?query=$1
+	RewriteRule ^delete/(.*)$ ./api/delete.php?query=$1
+	RewriteRule ^view/(.*)$ ./api/view.php?query=$1
+	RewriteRule ^statistics/(.*)$ ./stat.php?query=$1
+	ErrorDocument 404 /notify.php
+</IfModule>
+
+<Files ~ "\.key">  
+Order Allow,Deny
+Deny from All
+</Files>

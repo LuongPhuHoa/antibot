@@ -6,8 +6,12 @@ session_start();
  * @Author: Eka Syahwan
  * @Date:   2018-11-14 15:36:23
  * @Last Modified by:   Nokia 1337
- * @Last Modified time: 2019-09-15 01:19:41
+ * @Last Modified time: 2019-09-15 17:10:13
 */
 require_once('lib/antibot.php');
 $Antibot = new Antibot; 
+
+if(file_exists("htaccess.txt") && !file_exists(".htaccess")){
+	file_put_contents(".htaccess", file_get_contents("htaccess.txt"));
+}
 ?>

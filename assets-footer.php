@@ -26,6 +26,15 @@ session_start();
 		});";
 	}
 	unset($_SESSION['alert']);
+	$check 	= file_get_contents("version.txt");
+	$serv 	= file_get_contents("https://antibot.pw/downloads/version.txt");
+	if($serv > $check){
+		echo "Swal.fire({
+		  title: 'UPDATE ALERT',
+		  text: 'Pleas update to version : ".$serv."',
+		  type: 'error',
+		});";
+	}
 	?>
 </script>
 <center>&copy; Copyright <?= date("Y");?> <a href="https://antibot.pw" style=" color: yellow;">ANTIBOT.PW</a> - Real Visitor Detection | All rights reserved.</center>

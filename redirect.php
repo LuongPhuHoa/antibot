@@ -4,7 +4,7 @@ require_once('autoload.php');
  * @Author: Nokia 1337
  * @Date:   2019-09-13 18:55:48
  * @Last Modified by:   Nokia 1337
- * @Last Modified time: 2019-09-14 18:21:51
+ * @Last Modified time: 2019-09-16 01:13:48
 */
 
 if(file_exists('api/api.key')){
@@ -49,12 +49,13 @@ if($json['status']){
 	$respons 	= $Antibot->check($apikey , $json['respons']['respons']['keyname'] , $ipaddress );
 	$jhonson 	= $Antibot->json($respons); 
 	
-	if($jhonson[status]){
+
+	if($jhonson['status'] && $jhonson["respons"]['is_bot'] == false ||  $jhonson["respons"]['is_bot'] == 0){
 		die(header("Location: ".$json['respons']['respons']['url']));
 	}else{
-		echo $jhonson['respons']['message'];
+		$Antibot->error(403);
 	}
-
+    
 }else{
 	$Antibot->error(404);
 }

@@ -11,3 +11,8 @@ Antibot manager (http://antibot.pw) - easy way to create shortlinks for your web
 
 1. Upload File https://raw.githubusercontent.com/radenvodka/antibot/master/installer.php
 2. Visit to your domain : https://example.com/installer.php
+
+
+### Documentation on postman 
+
+https://documenter.getpostman.com/view/3645221/SVmwvHru?version=latest
